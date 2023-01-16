@@ -52,7 +52,7 @@ fun ButtonAlign() {
         Column ( modifier = Modifier
             .fillMaxSize()
             .padding(start = 65.dp, bottom = 140.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically)){
+            verticalArrangement = Arrangement.spacedBy(10.dp, CenterVertically)){
             TogglePhotos()
             ToggleMusic()
             ToggleContacts()
@@ -63,7 +63,7 @@ fun ButtonAlign() {
             .fillMaxSize()
             .padding(start = 180.dp, bottom = 140.dp),
             horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically)){
+            verticalArrangement = Arrangement.spacedBy(10.dp, CenterVertically)){
             ToggleVideos()
             ToggleDocuments()
             ToggleMessages()
@@ -84,6 +84,7 @@ fun ButtonAlign() {
         }
     }
 }
+
 @Composable
 fun BackButton(){
     val activity = (LocalContext.current as? Activity)
@@ -95,6 +96,7 @@ fun BackButton(){
         )
     }
 }
+
 @Composable
 fun TogglePhotos() {
 
@@ -113,7 +115,7 @@ fun TogglePhotos() {
 
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -178,7 +180,7 @@ fun ToggleVideos() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -243,7 +245,7 @@ fun ToggleMusic() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -308,7 +310,7 @@ fun ToggleDocuments() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -374,7 +376,7 @@ fun ToggleContacts() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -441,7 +443,7 @@ fun ToggleMessages() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
@@ -506,7 +508,7 @@ fun ToggleCallHistory() {
                     )
                     .clickable {
                         isToggle = !isToggle
-                    }, contentAlignment = Alignment.Center
+                    }, contentAlignment = Center
             ) {
                 if (isToggle) {
                     Row(
