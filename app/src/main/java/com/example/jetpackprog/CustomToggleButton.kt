@@ -41,52 +41,71 @@ fun TextHeading() {
 
 @Composable
 fun ButtonAlign() {
-    Column (modifier = Modifier
-        .padding(start= 2.dp, top = 2.dp, bottom = 20.dp),
+    Column(
+        modifier = Modifier
+            .padding(start = 2.dp, top = 2.dp, bottom = 20.dp),
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.Top){
+        verticalArrangement = Arrangement.Top
+    ) {
         BackButton()
     }
-
-    Row {
-        Column ( modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 65.dp, bottom = 140.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp, CenterVertically)){
-            TogglePhotos()
-            ToggleMusic()
-            ToggleContacts()
-        }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 5.dp, top = 150.dp, bottom = 10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally)
+    ) {
+        TogglePhotos()
+        ToggleVideos()
+    }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 7.dp, top = 200.dp, bottom = 8.dp
+            ),
+        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally)
+    ) {
+        ToggleMusic()
+        ToggleDocuments()
+    }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 5.dp,
+                bottom = 6.dp,
+                top = 250.dp
+            ), horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally)
+    ) {
+        ToggleContacts()
+        ToggleMessages()
+    }
+    Row(
+        modifier =
+        Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 2.dp,
+                bottom = 120.dp, top = 300.dp
+            ), horizontalArrangement = Arrangement.Center
+    ) {
+        ToggleCallHistory()
     }
     Row {
-        Column ( modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 180.dp, bottom = 140.dp),
-            horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.spacedBy(10.dp, CenterVertically)){
-            ToggleVideos()
-            ToggleDocuments()
-            ToggleMessages()
-        }
-    }
-    Column (modifier = Modifier
-        .padding(top = 275.dp, bottom = 225.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center){
-            ToggleCallHistory()
-    }
-    Row {
-        Column ( modifier = Modifier
-            .fillMaxSize(),
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom){
+            verticalArrangement = Arrangement.Bottom
+        ) {
             BackUpButton()
         }
     }
 }
 
 @Composable
-fun BackButton(){
+fun BackButton() {
     val activity = (LocalContext.current as? Activity)
     IconButton(onClick = { activity?.finish() }) {
         Icon(

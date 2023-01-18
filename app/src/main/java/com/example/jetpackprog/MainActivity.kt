@@ -54,7 +54,6 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
-
                 ) {
                     TextHeading()
                     ButtonAlign()
@@ -66,14 +65,12 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun ProfilePictureComposable(){
-
         Image(
             painter = painterResource(id = R.drawable.image1) ,
             contentDescription = "Profile Picture Holder",
             contentScale = ContentScale.Crop,
            modifier = Modifier.height(150.dp).padding(end = 8.dp)
         )
-
 }
 
 
